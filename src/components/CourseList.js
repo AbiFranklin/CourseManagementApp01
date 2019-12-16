@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CourseList = props => {
   return (
@@ -14,12 +15,7 @@ const CourseList = props => {
         {props.courses.map(course => (
           <tr key={course.id}>
             <td>
-              <a
-                href={`https://app.pluralsight.com/library/courses/${course.slug}`}
-                target="_blank"
-              >
-                {course.title}
-              </a>
+              <Link to={"/course/" + course.slug}>{course.title}</Link>
             </td>
             <td>Cory House</td>
             <td>{course.category}</td>
